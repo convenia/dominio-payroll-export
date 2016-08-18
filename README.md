@@ -21,10 +21,10 @@ $dominio = new PayrollExport;
 
 $payroll = [
     [
-        
+        'fixed' => 10, 
     ]
 ];
 
-$dominio->payroll($payroll)
+$payrollExport->events($payroll)
         ->generate();
 ```
