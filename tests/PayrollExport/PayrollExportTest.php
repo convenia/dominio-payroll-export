@@ -17,16 +17,19 @@ class PayrollExportTest extends BaseTest
                     ->events([
                         [
                             'fixed' => 10,
+                            'employeeCode' => 1111111111,
+                            'competence' => 201608,
+                            'rubric' => 4444,
+                            'type' => 55,
+                            'value' => 999999999,
+                            'company' => 8888888888,
                         ],
                     ])
                     ->generate();
-         
-                    var_dump($fileContents);
-             /*       
+                
         $this->assertEquals(
-            '                            10                                                          ',
+            '1011111111112016084444559999999998888888888',
             $fileContents
         );
-        */
     }
 }
