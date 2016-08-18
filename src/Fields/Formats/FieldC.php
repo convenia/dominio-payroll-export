@@ -1,8 +1,8 @@
 <?php
 
-namespace Convenia\Dominio\EmployeeExport\Fields\Formats;
+namespace Convenia\Dominio\PayrollExport\Fields\Formats;
 
-use Convenia\Dominio\EmployeeExport\Fields\Field;
+use Convenia\Dominio\PayrollExport\Fields\Field;
 
 /**
  * Class FieldC.

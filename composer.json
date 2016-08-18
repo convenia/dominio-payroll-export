@@ -1,6 +1,6 @@
 {
-  "name": "convenia/dominio-employee-export",
-  "description": "Format employees data to import to Dominio Software",
+  "name": "convenia/dominio-payroll-export",
+  "description": "Format payroll data to import to Dominio Software",
   "type": "library",
   "license": "MIT",
   "keywords": [
@@ -32,12 +32,12 @@
       "src/"
     ],
     "psr-4": {
-      "Convenia\\Dominio\\EmployeeExport\\": "src/"
+      "Convenia\\Dominio\\PayrollExport\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Convenia\\Dominio\\EmployeeExport\\Tests\\": "tests/EmployeeExport/"
+      "Convenia\\Dominio\\PayrollExport\\Tests\\": "tests/PayrollExport/"
     }
   },
   "config":{

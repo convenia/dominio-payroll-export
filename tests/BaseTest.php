@@ -1,6 +1,6 @@
 <?php
 
-namespace Convenia\Dominio\EmployeeExport\Tests;
+namespace Convenia\Dominio\PayrollExport\Tests;
 
 /**
  * Class BaseTest.

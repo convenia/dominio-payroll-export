@@ -1,6 +1,6 @@
 <?php
 
-namespace Convenia\Dominio\EmployeeExport\Exceptions;
+namespace Convenia\Dominio\PayrollExport\Exceptions;
 
 class RegistryTooLongException extends \Exception
 {

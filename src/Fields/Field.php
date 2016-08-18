@@ -1,8 +1,8 @@
 <?php
 
-namespace Convenia\Dominio\EmployeeExport\Fields;
+namespace Convenia\Dominio\PayrollExport\Fields;
 
-use Convenia\Dominio\EmployeeExport\Interfaces\FieldInterface;
+use Convenia\Dominio\PayrollExport\Interfaces\FieldInterface;
 use Stringy\Stringy as S;
 
 /**
