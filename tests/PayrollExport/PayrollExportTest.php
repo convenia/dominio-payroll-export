@@ -14,16 +14,19 @@ class PayrollExportTest extends BaseTest
         $payrollExport = new PayrollExport();
 
         $fileContents = $payrollExport
-                    ->employees([
+                    ->events([
                         [
-                            'name' => 'Vincent Vega',
+                            'fixed' => 10,
                         ],
                     ])
                     ->generate();
-                    
+         
+                    var_dump($fileContents);
+             /*       
         $this->assertEquals(
-            '                            Vincent Vega                                                          ',
+            '                            10                                                          ',
             $fileContents
         );
+        */
     }
 }

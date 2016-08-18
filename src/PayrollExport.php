@@ -12,17 +12,17 @@ class PayrollExport
     /**
      * @var array
      */
-    protected $employees = [];
+    protected $events = [];
 
     /**
-     * @param array $employeesData
+     * @param array $eventsData
      *
      * @return $this
      */
-    public function employees(array $employeesData)
+    public function events(array $eventsData)
     {
-        foreach ($employeesData as $employee) {
-            $this->employees[] = new PayrollRegistry($employee);
+        foreach ($eventsData as $event) {
+            $this->events[] = new PayrollRegistry($event);
         }
 
         return $this;
@@ -35,8 +35,8 @@ class PayrollExport
     {
         $returnString = '';
 
-        foreach ($this->employees as $employee) {
-            $returnString .= $employee;
+        foreach ($this->events as $event) {
+            $returnString .= $event;
         }
 
         return $returnString;

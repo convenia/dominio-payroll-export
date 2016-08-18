@@ -9,48 +9,50 @@ use Convenia\Dominio\PayrollExport\Fields\Formats\FieldC;
  */
 class PayrollRegistry extends Registry
 {
-    protected $length = 98;
+    protected $length = 43;
 
     /**
      * @var array
      */
     protected $defaultFields = [
-        'companyCode' => [
+        'fixed' => [
             'format'       => FieldC::class,
             'position'     => 1,
-            'length'       => 7,
+            'length'       => 2,
         ],
-        'code' => [
+        'employeeCode' => [
             'format'       => FieldC::class,
-            'position'     => 8,
-            'length'       => 7,
+            'position'     => 3,
+            'length'       => 10,
         ],
-        'branchCode' => [
+        'competence' => [
             'format'       => FieldC::class,
-            'position'     => 15,
-            'length'       => 7,
+            'position'     => 13,
+            'length'       => 6,
         ],
-        'blank' => [
+        'rubric' => [
             'format'       => FieldC::class,
-            'position'     => 22,
-            'length'       => 7,
+            'position'     => 19,
+            'length'       => 4,
         ],
-        'name' => [
+        'type' => [
             'format'   => FieldC::class,
-            'position' => 29,
-            'length'   => 70,
+            'position' => 23,
+            'length'   => 2,
+            /*
             'rules'    => [
                 'required',
-            ],
+            ],*/
         ],
-        /*'birthDate' => [
-            'format'       => FieldN::class,
-            'position'     => 0,
-            'length'       => 0,
-            'rules'    => [
-                'required',
-                'date:dmY',
-            ]
-        ],*/
+        'value' => [
+            'format'   => FieldC::class,
+            'position' => 25,
+            'length'   => 9,
+        ],
+        'company' => [
+            'format'   => FieldC::class,
+            'position' => 34,
+            'length'   => 10
+        ]
     ];
 }
