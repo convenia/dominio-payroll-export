@@ -21,7 +21,13 @@ $dominio = new PayrollExport;
 
 $payroll = [
     [
-        'fixed' => 10, 
+        'fixed' => 10,
+        'employeeCode' => 1111111111,
+        'competence' => 201608,
+        'rubric' => 4444,
+        'type' => 55,
+        'value' => 999999999,
+        'company' => 0000000,
     ]
 ];
 
