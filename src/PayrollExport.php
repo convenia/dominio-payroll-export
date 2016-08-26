@@ -36,7 +36,7 @@ class PayrollExport
         $returnString = '';
 
         foreach ($this->events as $event) {
-            $returnString .= $event;
+            $returnString .= $event."\n";
         }
 
         return $returnString;
