@@ -36,9 +36,9 @@ class PayrollExport
         $returnString = '';
 
         foreach ($this->events as $event) {
-            $returnString .= $event."\n";
+            $returnString .= $event.PHP_EOL;
         }
 
-        return $returnString;
+        return trim($returnString);
     }
 }

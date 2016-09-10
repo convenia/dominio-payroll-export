@@ -87,7 +87,8 @@ abstract class Registry
      */
     protected function fill()
     {
-        foreach ($this->defaultFields as $field => $values) {
+        array_map(function($field) {
+
             $defaultValue = isset($this->defaultFields[$field]['defaultValue']) ?
                 $this->defaultFields[$field]['defaultValue'] :
                 null;
@@ -95,7 +96,8 @@ abstract class Registry
             $this->values[$field] = (new $this->defaultFields[$field]['format']($defaultValue))
                 ->setPosition($this->defaultFields[$field]['position'])
                 ->setLength($this->defaultFields[$field]['length']);
-        }
+
+        }, array_keys($this->defaultFields));
     }
 
     /**
@@ -110,7 +112,7 @@ abstract class Registry
         /*
          * @var Field
          */
-        foreach ($this->values as $valueName => $valueClass) {
+        foreach ($this->values as $valueClass) {
             $this->resultString = $this->resultString->append($valueClass->getValue());
         }
 
