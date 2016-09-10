@@ -2,6 +2,7 @@
 
 Classe para exportar dados de de folha de sua empresa para o padrão aceito no software de folha [Domínio](http://www.dominiosistemas.com.br/)
 
+[![Build Status](https://travis-ci.org/convenia/dominio-payroll-export.svg?branch=master)](https://travis-ci.org/convenia/dominio-payroll-export) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0f231ed0-4c64-4678-b534-ac0222c5ec85/mini.png)](https://insight.sensiolabs.com/projects/0f231ed0-4c64-4678-b534-ac0222c5ec85) 
 ## Requisitos
 
 * PHP 5+
