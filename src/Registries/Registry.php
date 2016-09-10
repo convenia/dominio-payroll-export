@@ -87,8 +87,7 @@ abstract class Registry
      */
     protected function fill()
     {
-        array_map(function($field) {
-
+        array_map(function ($field) {
             $defaultValue = isset($this->defaultFields[$field]['defaultValue']) ?
                 $this->defaultFields[$field]['defaultValue'] :
                 null;
@@ -96,7 +95,6 @@ abstract class Registry
             $this->values[$field] = (new $this->defaultFields[$field]['format']($defaultValue))
                 ->setPosition($this->defaultFields[$field]['position'])
                 ->setLength($this->defaultFields[$field]['length']);
-
         }, array_keys($this->defaultFields));
     }
 
