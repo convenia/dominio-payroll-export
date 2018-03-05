@@ -7,7 +7,7 @@ use Convenia\Dominio\PayrollExport\Fields\Formats\FieldC;
 /**
  * Class PayrollRegistry.
  */
-class HealthInsuranceOperatorRegistry extends Registry
+class DependentRegistry extends Registry
 {
     protected $length = 43;
 
@@ -20,10 +20,15 @@ class HealthInsuranceOperatorRegistry extends Registry
             'position'     => 1,
             'length'       => 2,
         ],
-        'operatorCNPJ' => [
+        'dependentCode' => [
             'format'       => FieldC::class,
             'position'     => 3,
-            'length'       => 14,
+            'length'       => 10,
+        ],
+        'value' => [
+            'format'       => FieldC::class,
+            'position'     => 13,
+            'length'       => 9,
         ],
     ];
 }
