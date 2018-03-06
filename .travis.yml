@@ -20,3 +20,4 @@ before_script:
 notifications:
     script:
         - "phpunit --process-isolation"
+    email: false
