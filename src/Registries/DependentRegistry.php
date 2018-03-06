@@ -9,7 +9,7 @@ use Convenia\Dominio\PayrollExport\Fields\Formats\FieldC;
  */
 class DependentRegistry extends Registry
 {
-    protected $length = 43;
+    protected $length = 21;
 
     /**
      * @var array

@@ -9,7 +9,7 @@ use Convenia\Dominio\PayrollExport\Fields\Formats\FieldC;
  */
 class ServiceRegistry extends Registry
 {
-    protected $length = 43;
+    protected $length = 30;
 
     /**
      * @var array
@@ -18,7 +18,7 @@ class ServiceRegistry extends Registry
         'fixed' => [
             'format'       => FieldC::class,
             'position'     => 1,
-            'length'       => 20,
+            'length'       => 2,
         ],
         'serviceCode' => [
             'format'       => FieldC::class,

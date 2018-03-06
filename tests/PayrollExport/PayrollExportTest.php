@@ -9,29 +9,29 @@ use Convenia\Dominio\PayrollExport\PayrollExport;
  */
 class PayrollExportTest extends BaseTest
 {
-    public function test_generate_file_to_import_events()
-    {
-        $payrollExport = new PayrollExport();
-
-        $fileContents = $payrollExport
-                    ->events([
-                        [
-                            'fixed' => 10,
-                            'employeeCode' => 1111111111,
-                            'competence' => 201608,
-                            'rubric' => 4444,
-                            'type' => 55,
-                            'value' => 999999999,
-                            'company' => 8888888888,
-                        ],
-                    ])
-                    ->generate();
-                
-        $this->assertEquals(
-            '1011111111112016084444559999999998888888888',
-            $fileContents
-        );
-    }
+//    public function test_generate_file_to_import_events()
+//    {
+//        $payrollExport = new PayrollExport();
+//
+//        $fileContents = $payrollExport
+//            ->events([
+//                [
+//                    'fixed' => 10,
+//                    'employeeCode' => 1111111111,
+//                    'competence' => 201608,
+//                    'rubric' => 4444,
+//                    'type' => 55,
+//                    'value' => 999999999,
+//                    'company' => 8888888888,
+//                ],
+//            ])
+//            ->generate();
+//
+//        $this->assertEquals(
+//            '1011111111112016084444559999999998888888888',
+//            $fileContents
+//        );
+//    }
 
     public function test_generate_file_to_import_dependent_events()
     {
@@ -42,13 +42,13 @@ class PayrollExportTest extends BaseTest
                 [
                     'fixed' => 30,
                     'dependentCode' => 1111111111,
-                    'value' => 111111111,
+                    'value' => 222222222,
                 ],
             ])
             ->generate();
 
         $this->assertEquals(
-            '101111111111111111111',
+            '301111111111222222222',
             $fileContents
         );
     }
@@ -83,13 +83,13 @@ class PayrollExportTest extends BaseTest
                     'fixed' => 25,
                     'beneficiary' => 'T',
                     'code' => 1111111111,
-                    'value' => 111111111,
+                    'value' => 222222222,
                 ],
             ])
             ->generate();
 
         $this->assertEquals(
-            '25T1111111111111111111',
+            '25T1111111111222222222',
             $fileContents
         );
     }
@@ -99,7 +99,7 @@ class PayrollExportTest extends BaseTest
         $payrollExport = new PayrollExport();
 
         $fileContents = $payrollExport
-            ->healthInsuranceEvents([
+            ->healthInsuranceOperatorEvents([
                 [
                     'fixed' => 20,
                     'operatorCNPJ' => 11111111111111,
@@ -108,7 +108,7 @@ class PayrollExportTest extends BaseTest
             ->generate();
 
         $this->assertEquals(
-            '1011111111111111',
+            '2011111111111111',
             $fileContents
         );
     }
@@ -118,18 +118,18 @@ class PayrollExportTest extends BaseTest
         $payrollExport = new PayrollExport();
 
         $fileContents = $payrollExport
-            ->healthInsuranceEvents([
+            ->serviceEvents([
                 [
                     'fixed' => 40,
                     'serviceCode' => 1111111111,
-                    'rubricCode' => 111111111,
-                    'value' => 111111111,
+                    'rubricCode' => 222222222,
+                    'value' => 333333333,
                 ],
             ])
             ->generate();
 
         $this->assertEquals(
-            '401111111111111111111111111111',
+            '401111111111222222222333333333',
             $fileContents
         );
     }
