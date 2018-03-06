@@ -9,7 +9,7 @@ use Convenia\Dominio\PayrollExport\PayrollExport;
  */
 class PayrollExportTest extends BaseTest
 {
-    public function test_generate_file_to_import()
+    public function test_generate_file_to_import_events()
     {
         $payrollExport = new PayrollExport();
 
@@ -29,6 +29,107 @@ class PayrollExportTest extends BaseTest
                 
         $this->assertEquals(
             '1011111111112016084444559999999998888888888',
+            $fileContents
+        );
+    }
+
+    public function test_generate_file_to_import_dependent_events()
+    {
+        $payrollExport = new PayrollExport();
+
+        $fileContents = $payrollExport
+            ->dependentEvents([
+                [
+                    'fixed' => 30,
+                    'dependentCode' => 1111111111,
+                    'value' => 111111111,
+                ],
+            ])
+            ->generate();
+
+        $this->assertEquals(
+            '101111111111111111111',
+            $fileContents
+        );
+    }
+
+    public function test_generate_file_to_import_fault_events()
+    {
+        $payrollExport = new PayrollExport();
+
+        $fileContents = $payrollExport
+            ->faultEvents([
+                [
+                    'fixed' => 11,
+                    'faultDate' => 20180306,
+                    'faultType' => 1,
+                ],
+            ])
+            ->generate();
+
+        $this->assertEquals(
+            '11201803061',
+            $fileContents
+        );
+    }
+
+    public function test_generate_file_to_import_health_insurance_events()
+    {
+        $payrollExport = new PayrollExport();
+
+        $fileContents = $payrollExport
+            ->healthInsuranceEvents([
+                [
+                    'fixed' => 25,
+                    'beneficiary' => 'T',
+                    'code' => 1111111111,
+                    'value' => 111111111,
+                ],
+            ])
+            ->generate();
+
+        $this->assertEquals(
+            '25T1111111111111111111',
+            $fileContents
+        );
+    }
+
+    public function test_generate_file_to_import_health_insurance_operator_events()
+    {
+        $payrollExport = new PayrollExport();
+
+        $fileContents = $payrollExport
+            ->healthInsuranceEvents([
+                [
+                    'fixed' => 20,
+                    'operatorCNPJ' => 11111111111111,
+                ],
+            ])
+            ->generate();
+
+        $this->assertEquals(
+            '1011111111111111',
+            $fileContents
+        );
+    }
+
+    public function test_generate_file_to_import_service_events()
+    {
+        $payrollExport = new PayrollExport();
+
+        $fileContents = $payrollExport
+            ->healthInsuranceEvents([
+                [
+                    'fixed' => 40,
+                    'serviceCode' => 1111111111,
+                    'rubricCode' => 111111111,
+                    'value' => 111111111,
+                ],
+            ])
+            ->generate();
+
+        $this->assertEquals(
+            '401111111111111111111111111111',
             $fileContents
         );
     }
