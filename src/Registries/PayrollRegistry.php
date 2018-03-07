@@ -2,12 +2,13 @@
 
 namespace Convenia\Dominio\PayrollExport\Registries;
 
-use Convenia\Dominio\PayrollExport\Fields\Formats\FieldC;
+use Convenia\PayrollFileReader\Fields\Formats\FieldC;
+use Convenia\PayrollFileReader\Patterns\PatternBase;
 
 /**
  * Class PayrollRegistry.
  */
-class PayrollRegistry extends Registry
+class PayrollRegistry extends PatternBase
 {
     protected $length = 43;
 
