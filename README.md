@@ -37,8 +37,13 @@ $payroll = [
     ]
 ];
 
-// Conversão para string
-foreach ($this->events as $event) {
-    $file .= $event.PHP_EOL;
-}
+// Chamada para o evento
+$payrollExport->events($payroll)
+        ->generate();
 ```
+
+## Informações adicionais
+O package possuí 6 tipos de eventos, cada um deles com seu modelo.
+Para saber mais sobre os modelos e formatos que os modelos aceitam acesse: https://trello-attachments.s3.amazonaws.com/5a314d872eaae5d835af3fc8/5a9944db91e008b4978e1f4f/78b948790299a1f40a44467642806a44/Layout_Importacao_de_Lancamentos_Dominio.pdf
+
+// Para visualizar todos os eventos disponíveis acesse: https://github.com/convenia/dominio-payroll-export/blob/master/src/PayrollExport.php
