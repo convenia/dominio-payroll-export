@@ -39,10 +39,9 @@ class PayrollRegistry extends Registry
             'format'   => FieldC::class,
             'position' => 23,
             'length'   => 2,
-            /*
             'rules'    => [
                 'required',
-            ],*/
+            ],
         ],
         'value' => [
             'format'   => FieldC::class,
