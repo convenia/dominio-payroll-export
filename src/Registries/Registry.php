@@ -172,12 +172,8 @@ abstract class Registry
 
     private function setCompositions()
     {
-        if ( empty($this->compositions)) {
-            return ;
-        }
-
         foreach ($this->compositions as $composition) {
-            array_merge($this->defaultFields, (new $composition)->getDefaultFields());
+            $this->defaultFields = array_merge($this->defaultFields, (new $composition)->getDefaultFields());
         }
     }
 }
