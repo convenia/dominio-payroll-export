@@ -48,6 +48,11 @@ abstract class Registry
     protected $values = [];
 
     /**
+     * @var array
+     */
+    protected $compositions = [];
+
+    /**
      * @var Validation
      */
     protected $validator;
@@ -87,6 +92,8 @@ abstract class Registry
      */
     protected function fill()
     {
+        $this->setCompositions();
+
         array_map(function ($field) {
             $defaultValue = isset($this->defaultFields[$field]['defaultValue']) ?
                 $this->defaultFields[$field]['defaultValue'] :
@@ -156,5 +163,21 @@ abstract class Registry
     public function __toString()
     {
         return $this->generate();
+    }
+
+    public function getDefaultFields()
+    {
+        return $this->defaultFields;
+    }
+
+    private function setCompositions()
+    {
+        if ( empty($this->compositions)) {
+            return ;
+        }
+
+        foreach ($this->compositions as $composition) {
+            array_merge($this->defaultFields, (new $composition)->getDefaultFields());
+        }
     }
 }
