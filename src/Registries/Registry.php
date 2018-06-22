@@ -50,7 +50,7 @@ abstract class Registry
     /**
      * @var array
      */
-    protected $compositions = [];
+    protected $extends = [];
 
     /**
      * @var Validation
@@ -172,7 +172,7 @@ abstract class Registry
 
     private function setCompositions()
     {
-        foreach ($this->compositions as $composition) {
+        foreach ($this->extends as $composition) {
             $this->defaultFields = array_merge($this->defaultFields, (new $composition)->getDefaultFields());
         }
     }
