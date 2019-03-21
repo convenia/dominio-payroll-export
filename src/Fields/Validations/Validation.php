@@ -50,6 +50,10 @@ class Validation
      */
     public function validate(array $data)
     {
+        if (! is_array($this->rules)) {
+            return;
+        }
+
         if (count($this->rules) === 0) {
             return;
         }
